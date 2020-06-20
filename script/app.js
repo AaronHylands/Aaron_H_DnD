@@ -1,9 +1,15 @@
 (() => {
     // set up the puzzle pieces and boards
     const puzzleButtons   = document.querySelectorAll('#buttonHolder img'),
+          puzzleTray      = document.querySelectorAll('.puzzle-tray'),
           puzzlePieces    = document.querySelectorAll('.puzzle-image'),
           dropZones       = document.querySelectorAll('.drop-zone'),
+          droppedImages   = document.querySelectorAll('.drop-zone img'),
           gameBoard       = document.querySelector('.puzzle-board'),
+          topLeft         = document.querySelector('.tl'),
+          topRight        = document.querySelector('.tr'),
+          bottomLeft      = document.querySelector('.bl'),
+          bottomRight     = document.querySelector('.br'),
           resetButton     = document.querySelector('#resetButton');
     // add event handling here -> how is the user going to use our app?
 
@@ -49,15 +55,19 @@
         let droppedImage = event.dataTransfer.getData("draggedImg");
         event.target.appendChild(document.querySelector(`#${droppedImage}`));
       }
-      else{
+      else {
       console.log("I'm already full!");
     }
-    }
-
-    function resetPuzzlePieces(event) {
-          dropZones.removeChild(dropZones.firstChild);
 
     }
+
+    function resetPuzzlePieces() {
+      puzzleTray.appendChild(dropZones.children);
+
+
+    }
+
+
 
 
 
@@ -74,6 +84,10 @@
     //    zone.addEventListener('drop', allowDrop);
     //});
     for (let zone of dropZones) {
+      zone.addEventListener('dragover', allowDragOver);
+      zone.addEventListener('drop', allowDrop);
+    }
+    for (let zone of puzzleTray) {
       zone.addEventListener('dragover', allowDragOver);
       zone.addEventListener('drop', allowDrop);
     }

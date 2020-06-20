@@ -20,15 +20,8 @@ body {
     text-align: center;
 }
 
-.puzzle-pieces{
-  margin-top: 40px;
-  height: auto;
-  display: inline-block;
-  border: medium solid #333;
-  background-color: #000;
-  color: inherit;
-  overflow: hidden;
-}
+
+.puzzle-tray,
 .puzzle-board {
     margin-top: 40px;
     height: 400px;
@@ -39,7 +32,7 @@ body {
     overflow: hidden;
 }
 
-.puzzle-pieces {
+.puzzle-tray {
     width: 300px;
     margin-right: 20px;
 }
@@ -55,7 +48,7 @@ body {
     cursor: pointer;
 }
 
-.puzzle-pieces img:nth-child(odd) {
+.puzzle-tray img:nth-child(odd) {
     margin-left: auto
 }
 
