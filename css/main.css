@@ -20,7 +20,15 @@ body {
     text-align: center;
 }
 
-.puzzle-pieces,
+.puzzle-pieces{
+  margin-top: 40px;
+  height: auto;
+  display: inline-block;
+  border: medium solid #333;
+  background-color: #000;
+  color: inherit;
+  overflow: hidden;
+}
 .puzzle-board {
     margin-top: 40px;
     height: 400px;
@@ -56,14 +64,18 @@ body {
 
 .drop-zone img{
   position: absolute;
-  width: auto;
+  width: 100%;
   padding: 0px;
   margin: 0px;
   bottom: 0px;
 }
 
-.br img, .bl img {top: 0;}
-.tl img, .bl img {right: 0;}
+.br img, .bl img {
+  top: 0;
+}
+.tl img, .bl img {
+  right: 0;
+}
 
 /* set up drop zones */
 
