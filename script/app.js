@@ -62,7 +62,9 @@
     }
 
     function resetPuzzlePieces() {
-      puzzleTray.appendChild(dropZones.children);
+      //puzzleTray.appendChild(dropZones.children);
+      ////I tried using this and variants of it but to no avail I couldn't get it working.
+
 
 
     }
